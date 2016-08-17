@@ -1,5 +1,5 @@
 ---
-layout: post  
+layout: single
 title: 夏天的烟花
 description:   
 headline:     
