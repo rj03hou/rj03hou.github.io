@@ -26,7 +26,4 @@ published: true
 
 **TODO**尝试使用一个工具来持续的记录番茄。
 
-~~~python
-foo = (1, 2, 3, 4)
-for 
-~~~
+
