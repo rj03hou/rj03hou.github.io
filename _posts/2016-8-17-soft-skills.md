@@ -6,7 +6,7 @@ headline:
 categories: 读书笔记
 headline:
 tags: [读书笔记,  软技能]
-comments: ture
+comments: true
 published: true
 ---
 
