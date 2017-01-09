@@ -1,7 +1,7 @@
 ---
 layout: single
-title: 简明使用docker在mac上搭建percona5.7测试环境
-description: 简明使用docker在mac上搭建percona5.7测试环境
+title: 简明使用docker在mac上搭建MySQL5.7测试环境
+description: 简明使用docker在mac上搭建MySQL5.7测试环境
 headline:
 categories: mysql
 headline:
@@ -9,6 +9,8 @@ tags: [docker,  mysql]
 comments: true
 published: true
 ---
+
+MySQL5.7已经GA很久了，但是很多人还没有进行尝鲜，也没有在本地做一些功能上的测试研究；本文主要介绍了如何使用docker在mac下，快速搭建一个MySQL或者Percona的5.7功能测试环境。
 
 ### 1.mac下docker安装
 
@@ -22,7 +24,7 @@ published: true
 
 ### 2.docker image创建
 
-获取MySQL5.7的 image
+获取Percona5.7的 image，如果打算测试官方5.7，则docker pull mysql:5.7就可以。
 
 ```shell
 bash> docker pull percona:5.7
@@ -55,5 +57,5 @@ root@46cce1dfe38c:/# mysql
 
 
 
-祝玩的愉快。
+是不是很简单，祝玩的愉快。
 
