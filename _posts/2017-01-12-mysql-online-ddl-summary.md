@@ -10,6 +10,8 @@ comments: true
 published: true
 ---
 
+本文主要描述MySQL Online DDL现状及分析，包括MySQL 5.7 Online DDL新增特性，和pt-osc以及gh-ost对比，以及腾讯GSC在线改表原理。
+
 ## 5.7新增rename index的online功能
 
 5.7新增加online rename index， 仅仅通过修改元信息就可以完成。
