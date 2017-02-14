@@ -1,20 +1,18 @@
+---
 layout: single
 title: MySQL Performance Schema&sys Schema介绍
-description: 
+description: 介绍MySQL Performance Schema&sys Schema
 headline: 
 categories: mysql
 headline:
 tags: [mysql]
 comments: true
 published: true
+---
 
+# 试图解决如下问题
 
-
-
-
-# 问题
-
-sys schema和PS什么关系？怎么用？
+sys schema和PS是干什么的？两者什么关系？怎么用？
 
 PS有哪些常见用途？
 
