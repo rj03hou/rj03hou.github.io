@@ -163,11 +163,24 @@ PS Instrument分为下面几大类，命名方式按照从抽象到具体的原�
 2. current events tables，命名：xxx_current，表示当前每一个连接最近的一个event；
 3. history tables，命名：xxx_history，表示当前每一个连接最近的10个event；可以通过类似 [`performance_schema_events_waits_history_size`](https://dev.mysql.com/doc/refman/5.7/en/performance-schema-system-variables.html#sysvar_performance_schema_events_waits_history_size)参数进行修改；
 4. history long tables，命名：xxx_history_long，表示当前每一个连接最近的10000个event；可以通过类似[`performance_schema_events_waits_history_long_size`](https://dev.mysql.com/doc/refman/5.7/en/performance-schema-system-variables.html#sysvar_performance_schema_events_waits_history_long_size)进行修改；
-5. summary tables，命名：xxx_summary_by_xxx，表示针对某种event以某种纬度的统计；比如events_statements_summary_by_digest，对statement按照digest进行统计；
+5. summary tables，命名：xxx_summary_by_xxx，表示针对某种event以某种纬度的统计；比如events_statements_summary_by_digest，对statement按照digest进行统计诸如SUM_ROWS_SENT、SUM_ROWS_EXAMINED、SUM_LOCK_TIME、SUM_NO_INDEX_USED等指标；
 6. instance tables，命名：xxx_instances，表示针对某种类型的资源（比如file、rwlock、mutex）当前的使用情况；
 7. 其他表，比如metadata_locks表，表示metadatalock的持有情况
+   1. users/hosts/accounts分别以这些纬度来统计当前的连接以及历史全部连接数。
+
+其中xx_stages_xx类型的表，是按照各个阶段来进行划分的，比如类似stage/sql/allocating local table、stage/sql/preparing for alter table、stage/sql/committing alter table to storage engine，可以通过阶段耗时来定位问题。
+
+其中xx_statements_xx类型的表，是和语句相关，可以通过这些表查看语句相关的信息，比如ROWS_SENT、ROWS_EXAMINED、LOCK_TIME、NO_INDEX_USED等；
 
 PS下面的表只能应用有限的一些权限，比如select、update、drop（用于truncate，清空已有的信息），因此不能授权ALL给ps下面的表。
+
+关于performance schema的用法，可以参照这个[PPT](http://www.slideshare.net/SvetaSmirnova/performance-schema-for-mysql-troubleshooting)，写的非常详细。
+
+关于performance schema对与性能的影响可以查看[Sveta Smirnova的性能测试](https://www.percona.com/blog/2017/01/26/performance-schema-benchmarks-oltp-rw/)（和上面提到的PS用法的PPT是一个作者），5.7中Default选项对与性能的影响完全在可接受的范围内。
+
+![PS性能测试](../images/ps_test.png)
+
+
 
 # 用途
 
