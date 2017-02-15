@@ -178,7 +178,7 @@ PS下面的表只能应用有限的一些权限，比如select、update、drop�
 
 关于performance schema对与性能的影响可以查看[Sveta Smirnova的性能测试](https://www.percona.com/blog/2017/01/26/performance-schema-benchmarks-oltp-rw/)（和上面提到的PS用法的PPT是一个作者），5.7中Default选项对与性能的影响完全在可接受的范围内。
 
-![PS性能测试](../images/ps_test.png)
+![PS性能测试](https://rj03hou.github.io/images/ps_test.png)
 
 
 
