@@ -5,7 +5,6 @@ title: 10种学习方法
 description: 介绍10种学习方法以及其有效性对比
 headline: 
 categories: study
-headline:
 tags: [study]
 comments: true
 published: true
