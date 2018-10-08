@@ -5,6 +5,7 @@ title: aws ec2 bandwidth benchmark(network performance)
 description: aws ec2 bandwidth benchmark(network performance)
 headline: 
 categories: aws
+headline:
 tags: [aws]
 comments: true
 published: true
