@@ -83,3 +83,4 @@ published: true
 
 1. [nginx-controller configmap](https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/configmap.md)
 2. [PROXY Protocol](https://github.com/nginxinc/kubernetes-ingress/tree/master/examples/proxy-protocol)
+3. [Demystifying the NGINX Real IP Module一个很棒的例子，用于验证自己的理解](https://brookscunningham.com/2017/01/13/demystifying-the-nginx-real-ip-module/)
