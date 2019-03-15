@@ -4,11 +4,11 @@ title: ec2-instance-store
 description: ec2-instance-store
 headline: ec2-instance-store
 categories: aws,ec2
+headline: 
 tags: [aws,ec2]
 comments: true
 published: true
 ---
-
 
 每个EC2上都带了一个instance store，instance store区别于ebs，就是机器上的本地盘（通过lsblk可以看到），根据instance type挂载的大小是不一样的；相比ebs是免费的，但是存在一个问题：
 
