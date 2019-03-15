@@ -1,6 +1,6 @@
 ---
 layout: single
-title:chttp security header
+title: http security header
 description: http security header
 headline: http security header
 categories: http,security
