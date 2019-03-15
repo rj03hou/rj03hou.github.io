@@ -4,7 +4,7 @@ title: http security header
 description: http security header
 headline: http security header
 categories: http,security
-headline:
+headline: 
 tags: [http,security]
 comments: true
 published: true
