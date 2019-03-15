@@ -4,7 +4,6 @@ title: ec2-instance-store
 description: ec2-instance-store
 headline: ec2-instance-store
 categories: aws,ec2
-headline:
 tags: [aws,ec2]
 comments: true
 published: true
