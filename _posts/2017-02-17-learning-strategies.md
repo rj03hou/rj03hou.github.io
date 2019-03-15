@@ -1,15 +1,14 @@
-
 ---
 layout: single
 title: 10种学习方法
 description: 介绍10种学习方法以及其有效性对比
 headline: 
 categories: study
+headline: 
 tags: [study]
 comments: true
 published: true
 ---
-
 
 最近看了一篇论文[《Strengtheningthe Student Toolbox, study strategies to Boost learning》](https://www.aft.org/sites/default/files/periodicals/dunlosky.pdf)，将论文中提到的10种学习策略以及其有效性对比简单摘录如下：
 
