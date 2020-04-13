@@ -12,7 +12,9 @@ published: true
 
 
 
-## DDL
+## FastDDL
+
+不过FastDDL根据文档只在lab mode下生效，但是lab mode默认是关闭的，根据[aws文档](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.FastDDL.html)不建议在生产环境下使用lab mode。
 
 Aurora支持添加字段的时候，支持fast DDL，不过有如下限制:
 
