@@ -30,7 +30,7 @@ Aurora支持添加字段的时候，支持fast DDL，不过有如下限制:
 
   The maximum record size check was added in Aurora 1.15.
 
-
+innodb_online_alter_log_max_size 默认值512M，mysql5.7默认值128M
 
 只支持add column，其他的见mysql：https://dev.mysql.com/doc/refman/5.7/en/innodb-online-ddl-operations.html
 
