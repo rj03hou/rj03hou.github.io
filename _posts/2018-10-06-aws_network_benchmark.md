@@ -28,7 +28,7 @@ yum install iperf3.x86_64 -y
 #server端
 iperf3 -s -p 8080
 #client端，-i 每隔一定的时间输出一下结果，-P多少个线程，-u udp的意思，默认是tcp，-p server端口，-t测试时间
-iperf3 -c SERVER_IP -u -P 10 -i 5 -t 300 -V -p 8080
+iperf3 -c SERVER_IP  -P 10 -i 5 -t 300 -V -p 8080
 ```
 
 
@@ -91,7 +91,7 @@ Test Complete. Summary Results:
 [SUM]   0.00-300.00 sec  17.2 GBytes   492 Mbits/sec                  receiver
 CPU Utilization: local/sender 2.1% (0.1%u/2.0%s), remote/receiver 9.2% (0.9%u/8.3%s)
 
-```
+```bash
 
 
 
@@ -181,6 +181,21 @@ Test Complete. Summary Results:
 [SUM]   0.00-600.00 sec   305 GBytes  4.37 Gbits/sec                  receiver
 CPU Utilization: local/sender 15.5% (0.2%u/15.3%s), remote/receiver 56.5% (3.1%u/53.5%s)
 ```
+
+
+**m5.2xlarge** 
+测试时间30分钟，server和client配置相同都是m5.2xlarge，并且确认ENA都是打开的；
+server：iperf3 -s -p 8080
+client：iperf3 -c SERVERIP -P 40 -i 5 -t 1800 -V -p 8080
+10Gbit/s持续了25分钟左右，然后下降并稳定到2.48 Gbits/sec
+
+**c5.large**
+测试时间30分钟，server和client配置相同都是m5.2xlarge，并且确认ENA都是打开的；
+server：iperf3 -s -p 8080
+client：iperf3 -c SERVERIP -P 40 -i 5 -t 1800 -V -p 8080
+10Gbit/s持续了6分钟左右，然后下降并稳定到 715 Mbit/sec
+
+
 
 **Enabling Enhanced Networking with the Elastic Network Adapter (ENA) on Linux Instances**
 
