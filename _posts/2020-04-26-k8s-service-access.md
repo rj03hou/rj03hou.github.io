@@ -25,6 +25,8 @@ service type类型来区分了集群外和集群内如何访问；我们目前�
 - `LoadBalancer`：使用云提供商的负载局衡器，可以向外部暴露服务。外部的负载均衡器可以路由到 `NodePort` 服务和 `ClusterIP` 服务。比如aws的lb路由到nodeport服务上。
 - `ExternalName`：通过返回 `CNAME` 和它的值，可以将服务映射到 `externalName` 字段的内容（例如， `foo.bar.example.com`）。 没有任何类型代理被创建。
 
+参照[K8S – 手把手分析service生成的iptables规则]([https://yuerblog.cc/2019/12/09/k8s-%E6%89%8B%E6%8A%8A%E6%89%8B%E5%88%86%E6%9E%90service%E7%94%9F%E6%88%90%E7%9A%84iptables%E8%A7%84%E5%88%99/](https://yuerblog.cc/2019/12/09/k8s-手把手分析service生成的iptables规则/))
+
 # 集群内通过service访问外部资源
 
 ## 一 仅DNS映射
