@@ -45,3 +45,33 @@ Time 2019-03-20 10:48:40.322.
 ### 三 websocket接口报502错误
 
 详情见[cloudfront遇到的502问题](https://rj03hou.github.io/aws,cloudfront/cloudfront%E9%81%87%E5%88%B0%E7%9A%84502%E9%97%AE%E9%A2%98/)
+
+### 四 websocket连接断开
+
+Server: nginx/1.12.2
+chart-version: nginx-ingress-1.27.0 0.26.1
+
+**两种场景下会断开重连**，1.ingress变更导致ng reload 2.ws连接的service因为deployment修改引起的service重新发布；
+
+1. 修改ingress 比如修改path对应的backend，增加path等；修改和ws不相关的ingress也会reload；
+  kubectl edit ingress ws-bhexb-com -n preview
+  kubectl logs nginx-ingress-controller-76b94-hj27w nginx-ingress-controller|grep reload
+
+  I0508 04:15:31.588682       6 controller.go:134] Configuration changes detected, backend reload required.
+  I0508 04:15:31.863294       6 controller.go:150] Backend successfully reloaded.
+
+  2020-05-08 12:19:30
+  {"pong":1588911570891}
+  Connection is already closed.
+
+2. ingress不变，deployment发生变化；不会引起realod；
+比如replica数量，比如request/limit调整，比如发布代码调整image等；
+修改request没有引发reload；
+修改ws连接的pod导致ws断开连接；
+
+
+
+解决方法：
+
+1. 针对长连接的nginx进行拆分；
+2. 针对长连接的service前面增加一个gateway用于连接保持；
